@@ -1,10 +1,10 @@
 // load tous les modules necessaire pour l'api
 const express = require('express');
-const bodyParser = require('body-parser');
+const bodyParser = require('body-parser'); // permet de recup des infos dans le body
 const mongoose = require('mongoose');
 const produitRoute = require('./routes/produit_route');
 
-// pour les routes
+// pour les routes, créé une application "express" donc dépand des rélges express
 const app = express();
 
 // établit la relation avec postman
@@ -17,11 +17,12 @@ mongoose.connect('mongodb+srv://carod:caroD34270*@cluster0-fbriu.gcp.mongodb.net
     console.log(err);
 });
 
-
+// middleware analyse le corps encodé en url
 app.use(bodyParser.urlencoded({
     extended: true
 }));
 
+// pour présiser qu'on recup du json
 app.use(bodyParser.json());
 
 app.use('/api/produit', produitRoute) // toutes les routes vont etre précédées de /api/recettes

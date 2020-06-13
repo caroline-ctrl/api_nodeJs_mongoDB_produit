@@ -1,5 +1,5 @@
-// etablit la communication entre tout
-const http = require('http');
+// etablit la communication avec le protocole http
+const http = require('http'); 
 
 // les routes
 const app = require('./app');

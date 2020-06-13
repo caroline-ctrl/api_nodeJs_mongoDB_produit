@@ -1,7 +1,7 @@
 // load les modules necessaire
 const mongoose = require('mongoose');
 
-// construit les intitulés et type dans la bdd du produit
+// construit les intitulés et type dans la bdd du produit donc le schéma de mes données
 const ProduitSchema = mongoose.Schema({
     title: { // le titre sera de type string et sera obligatoire
         type: String,
