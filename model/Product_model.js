@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 
 // construit les intitulés et type dans la bdd du produit donc le schéma de mes données
-const ProduitSchema = mongoose.Schema({
+const ProductSchema = mongoose.Schema({
     title: { // le titre sera de type string et sera obligatoire
         type: String,
         required: true
@@ -13,14 +13,16 @@ const ProduitSchema = mongoose.Schema({
     },
     created_at: { // la date de création sera de type date et sera obligatoire
         type: String,
-        required: true
+        required: true,
+        // timestamps: true
     },
     updated_at: { // la date de modification sera de type date et sera obligatoire
         type: String,
-        required: true
+        required: true,
+        // timestamps: true
     }
 });
 
 
 // exporter le schema
-module.exports = mongoose.model('Produit_model', ProduitSchema);
+module.exports = mongoose.model('Product_model', ProductSchema);
